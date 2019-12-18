@@ -3,7 +3,7 @@ import re
 
 
 def tex_to_tags(tex_files):
-    r"""Extract tags from tex files.
+    """Extract tags from tex files.
 
     Given a list of tex files, extract the citation tags which are contained in
     ``\cite{}``. Split multiple citations (e.g. ``\cite{A, B}``) into
@@ -11,23 +11,25 @@ def tex_to_tags(tex_files):
 
     Parameters
     ----------
-    tex_files
+    tex_files : List[str]
         List of tex files.
 
     Returns
     -------
-    all_tags
+    all_tags : List[str]
         List of individual tags.
 
     Notes
     -----
     Assume :
-    1. Citation tags are a combination of letters, numbers, underscores(_) and
-    hyphens (-).
-    2. Multiple citations are separated by commas.
-    3. Spaces on either side of the comma are okay.
-    4. The following don't appear within citation tag: newlines, accented
-    characters.
+
+    #. Citation tags are a combination of letters, numbers, underscores(_) and hyphens (-).
+
+    #. Multiple citations are separated by commas.
+
+    #. Spaces on either side of the comma are okay.
+
+    #. The following don't appear within citation tag: newlines, accented characters.
     """
 
     all_csv_tags = []
