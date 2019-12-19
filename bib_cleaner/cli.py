@@ -7,8 +7,15 @@ import os
 
 def main():
     """Console script for bib_cleaner."""
-    parser = argparse.ArgumentParser(description="Produce a minimal bib file with only the entries found in your .tex file(s)")
-    parser.add_argument("masterfile", type=str, nargs=1, help="master bib file with used and unused citations (.bib)")
+    parser = argparse.ArgumentParser(
+        description="Produce a minimal bib file with only the entries found in your .tex file(s)"
+    )
+    parser.add_argument(
+        "masterfile",
+        type=str,
+        nargs=1,
+        help="master bib file with used and unused citations (.bib)",
+    )
     parser.add_argument(
         "-t",
         "--texfiles",
