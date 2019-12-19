@@ -3,8 +3,6 @@
 """Tests for `bib_cleaner` package."""
 
 import pytest
-
-
 from bib_cleaner import bib_cleaner
 
 

@@ -3,16 +3,16 @@ import re
 
 
 def tex_to_tags(tex_files):
-    """Extract tags from tex files.
+    """Extract tags from TeX files.
 
-    Given a list of tex files, extract the citation tags which are contained in
+    Given a list of TeX files, extract the citation tags which are contained in
     ``\cite{}``. Split multiple citations (e.g. ``\cite{A, B}``) into
     individual tags (A, B).
 
     Parameters
     ----------
     tex_files : List[str]
-        List of tex files.
+        List of TeX files.
 
     Returns
     -------

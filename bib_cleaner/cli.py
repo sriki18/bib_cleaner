@@ -28,13 +28,13 @@ def main():
                 if not a_file.startswith("__"):
                     tex_files.append(a_file)
         if tex_files == []:
-            print("No .tex files found, aborting!")
+            print("No TeX files found, aborting!")
             return -1
-        print(f"Using the following .tex files {tex_files}")
+        print(f"Using the following TeX files {tex_files}")
     else:
         tex_files = args.texfiles
 
-    print("Using tex files : ", tex_files)
+    print("Using TeX files : ", tex_files)
     print("Output: ", tex_to_tags(tex_files))
     return 0
 
