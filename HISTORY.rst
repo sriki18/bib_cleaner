@@ -2,6 +2,14 @@
 History
 =======
 
+0.3.0 (2019-12-20)
+------------------
+
+Added
+~~~~~
+* Option to store output in ``new.bib``
+* Intro and examples to ``README.rst``
+
 0.2.1 (2019-12-20)
 ------------------
 
