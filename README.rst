@@ -22,19 +22,59 @@ Bib Cleaner removes unnecessary entries from your bib files. Documentation @ htt
 Use case
 --------
 
-1. You have been writing a TeX document for a while, and adding citation entries to your ``.bib`` file (say it's called ``master.bib``).
-2. In the course of writing, some entries in your ``master.bib`` have become obsolete. You don't use them in your TeX document anymore.
-3. Of course, LaTeX compiles quite happily with these extra entries.
+1. You have been writing a TeX document for a while, and adding citation entries to your ``.bib`` file. Suppose it is called ``master.bib`` and contains the following::
+
+    % master.bib
+
+    @article{citation1
+    author = {Lastname1, Firstname1 and Lastname2, Firstname2},
+    title = {{Title of Paper 1}},
+    year = {2018}
+    }
+    @article{citation2
+    author = {Lastname1, Firstname1 and Lastname2, Firstname2 and Lastname3, Firstname3},
+    title = {{Title of Paper 2}},
+    year = {2012}
+    }
+    @article{citation3
+    author = {Lastname1, Firstname1 and Lastname2, Firstname2},
+    title = {{Title of Paper 3}},
+    year = {1953}
+    }
+    @article{citation4
+    author = {Lastname1, Firstname1 and Lastname2, Firstname2},
+    title = {{Title of Paper 4}},
+    year = {1959}
+    }
+
+2. In the course of writing, some entries in your ``master.bib`` have become obsolete. You don't use them in your TeX document anymore, which looks like this::
+
+    % contents.tex
+
+    \documentclass{article}
+    \begin{document}
+
+    I wished them the so long \cite{citation1}
+    and thanked them for all the fish \cite{citation3}.
+
+    \end{document}
+
+
+  Here ``citation2`` and ``citation4`` have become obsolete.
+
+3. Of course, LaTeX compiles quite happily with these extra entries (``citation2`` and ``citation4``) and excludes them from the typeset bibliography... but you *know* they are there.
 4. You take a step back, sip some coffee, go for a walk, all the while pondering "Man, I wish I could just `remove` those extra bib entries". You yearn for a world where all ``.bib`` files everywhere carry only what they have to, and no more.
 
 I gotchu. Enter ``bib_cleaner``.
 
 
-Installation
-------------
+Quick install
+--------------
 This should work::
 
     $ pip install bib_cleaner
+
+For detailed instructions, see :ref:`detailed_install`
 
 Verify if it installed by typing the following in the command-line::
 
@@ -56,8 +96,13 @@ You should see the help::
     -o OUTPUTBIB, --outputbib OUTPUTBIB
                             output file name with extension
 
-Examples
---------
+How to use `bib_cleaner`
+------------------------
+
+
+
+
+
 After installation, navigate to your TeX directory try::
 
     $ bib_cleaner master.bib
@@ -67,7 +112,7 @@ Of course, replace ``master.bib`` with the name of your bib file with obsolete b
 Specify TeX files
 ~~~~~~~~~~~~~~~~~
 
-If you only want to use some TeX files, specify them with::
+If you only want to keep the entries used in some TeX files, specify them with::
 
     $ bib_cleaner master.bib --texfiles chapter1.tex chapter2.tex
 
