@@ -64,8 +64,9 @@ def main():
     delta_citations = total_bibs - used_bibs
     pct_change_citations = delta_citations / total_bibs * 100
     print(
-        f"Removed {delta} lines ({delta_citations} citations) with {pct_change:.2f}%  ({pct_change_citations:.2f}%) reduction!"
+        f"Removed {delta} lines ({delta_citations} citations) from {bib_file} with {pct_change:.2f}%  ({pct_change_citations:.2f}%) reduction!"
     )
+    print(f"New citations were saved in : {args.outputbib[0]}")
     return 0
 
 

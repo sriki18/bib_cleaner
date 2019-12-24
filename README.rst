@@ -99,15 +99,21 @@ You should see the help::
 How to use `bib_cleaner`
 ------------------------
 
-
-
-
-
 After installation, navigate to your TeX directory try::
 
     $ bib_cleaner master.bib
 
-Of course, replace ``master.bib`` with the name of your bib file with obsolete bib entries. ``bib_cleaner`` will automatically detect all the TeX files (``.tex``) in that directory and use them to determine which bib entries are obsolete.
+Of course, replace ``master.bib`` with the name of your bib file with obsolete bib entries. ``bib_cleaner`` will
+
+1. automatically detect all the TeX files (``.tex``) in that directory and use them to determine which bib entries are obsolete.
+
+2. create ``new.bib`` which does not have the obsolete citations.
+
+After you run ``bib_cleaner`` for the first time, you can
+
+1. update your TeX files to use ``new.bib`` instead of ``master.bib``. Thereafter, any new citations added to your TeX files or addition/removal of entries from ``master.bib`` should be followed by a call to ``bib_cleaner``. Of course, you can add it to your LaTeX makefile should you have one.
+
+2. marvel at how much smaller ``new.bib``. When the writing project is completed, run ``bib_cleaner`` again,once and for all and update your TeX files to use ``new.bib`` instead of ``master.bib``.
 
 Specify TeX files
 ~~~~~~~~~~~~~~~~~
