@@ -56,7 +56,7 @@ def main():
     with open(args.outputbib[0], "w", encoding="utf-8") as f:
         f.write(new_contents)
 
-    with open(args.outputbib[0]) as f:
+    with open(args.outputbib[0], encoding="utf-8") as f:
         new_contents_verify = f.read()
     new_lines_verify = new_contents_verify.split("\n")
     delta = len_contents - len(new_lines_verify)
